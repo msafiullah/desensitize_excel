@@ -41,6 +41,16 @@ pip3 install --user -r requirements.txt
 
 **python3 desensitizer.py** _<excel_file>_ _<sheet_name>_ _<columns_to_hash>_ _<columns_to_mask>_ _[char_map.csv]_
 
+
+Option | Description | Example | Required
+-- | -- | -- | --
+excel_file | Path to excel file. | ./Sample.xlsx | Yes
+sheet_name | Name of excel sheet. | Sheet1 | Yes
+columns_to_hash | Comma seperated list of columns to hash. | id,name,dob | Yes
+columns_to_mask | Comma seperated list of columns to mask. | gender,contact,email | Yes
+char_map_csv | Existing character mapping in pipe  delimited CSV format. | ./sample_char_map.csv | _Optional_
+
+
 #### Run with sample data provided
 ```
 python3 desensitizer.py sample.xlsx Sheet1 id,name contact,email
