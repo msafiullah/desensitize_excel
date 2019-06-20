@@ -12,7 +12,7 @@ A character map dictionary is generated at runtime unless provided. Alphanumeric
 
 #### Sample desensitized data
 
-***Original data***
+_Below is the original data:_
 
 id | name | dob | gender | contact | email
 -- | -- | -- | -- | -- | --
@@ -20,8 +20,7 @@ id | name | dob | gender | contact | email
 2 | ben | 23/12/93 | M | 98394853 | benjamin@outlook.com
 3 | claire | 24/3/91 | F | 82938465 | clairelee@hotmail.com
 
-***Desensitized data***
-
+_Below is the desentized data:_
 
 id | name | dob | gender | contact | email
 -- | -- | -- | -- | -- | --
