@@ -29,6 +29,8 @@ id | name | dob | gender | contact | email
 2 | 7fe47-71c00-2c6aa | 23/12/93 | 69691-c7bdc-d04ac | 63467394 | icpqwtmp@bnaebbd.gbt
 3 | 182e5-00f56-47bb2 | 24/3/91 | 80061-89430-71012 | 35643719 | gewmrcecc@obatwme.gbt
 
+Columns `name` and `gender` are hashed, columns `contact` and `email` are masked, whereas columns `id` and `dob` are kept as original.
+
 
 ## Install Python Packages
 ```
