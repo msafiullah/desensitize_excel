@@ -8,7 +8,7 @@ Anonymize data in excel sheet by hashing or masking selected columns.
 Md5 hash algorithm is used and the resulting 32 character hash string is shortened by truncating the middle portion. Example, `"c4ca4238a09dje7s8a0nhs3j4js5849b"` becomes `"c4ca4-238a0-5849b"`.
 
 #### Mask values for selected columns
-A character map dictionary is generated at runtime unless provided. Alphanumeric characters [A-Za-z0-9] are encoded to a different character. Example, `A --> C; B --> W; C --> X`, etc. Upper and lower case letters have the same mapping. Hence, `"ABC"` and `"abc"` becomes `"CWX"` and `"cwx"` respectively.  Digits are mapped to other digits.
+A character map dictionary is generated at runtime unless provided. Alphanumeric characters `[A-Za-z0-9]` are encoded to a different character. Example, `A --> C; B --> W; C --> X`, etc. Upper and lower case letters have the same mapping. Hence, `"ABC"` and `"abc"` becomes `"CWX"` and `"cwx"` respectively.  Digits are mapped to other digits.
 
 #### Sample desensitized data
 
