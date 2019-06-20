@@ -41,7 +41,7 @@ pip3 install --user -r requirements.txt
 
 **python3 desensitizer.py** _<excel_file>_ _<sheet_name>_ _<columns_to_hash>_ _<columns_to_mask>_ _[char_map.csv]_
 
-### Run with sample data provided
+#### Run with sample data provided
 ```
 python3 desensitizer.py sample.xlsx Sheet1 id,name contact,email
 ```
