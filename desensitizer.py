@@ -9,9 +9,9 @@ from random import shuffle
 
 script = sys.argv[0]
 
-if len(sys.argv) != 5 :
-	print ("Usage: ", script, " <excel_file> <sheet_name> <cols_to_hash_sep_by_comma> <cols_to_mask_sep_by_comma>")
-	sys.exit("Expecting 4 arguments.")
+if len(sys.argv) < 5 :
+	print ("Usage: ", script, " <excel_file> <sheet_name> <cols_to_hash_sep_by_comma> <cols_to_mask_sep_by_comma> [char_map.csv]")
+	sys.exit("Expecting at least 4 arguments.")
 
 excel_file = sys.argv[1]
 sheet_name = sys.argv[2]
@@ -19,6 +19,12 @@ cols_to_hash = sys.argv[3].split(',')
 cols_to_mask = sys.argv[4].split(',')
 
 CHAR_MAP_DICT = None
+
+if len(sys.argv) > 5 :
+	char_map_csv = sys.argv[5]
+	char_map_df = pd.read_csv(char_map_csv, sep="|", dtype=str)
+	CHAR_MAP_DICT = char_map_df.to_dict('records')[0]
+
 
 
 def read_excel(excel_file, sheet_name):
@@ -129,7 +135,8 @@ if __name__ == "__main__":
 
 	script_path = os.path.dirname(os.path.realpath(__file__)) + '/'
 
-	CHAR_MAP_DICT = generate_char_map()
+	if CHAR_MAP_DICT is None:
+		CHAR_MAP_DICT = generate_char_map()
 
 	# Read excel sheet
 	df = read_excel(excel_file, sheet_name)
