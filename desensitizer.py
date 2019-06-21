@@ -40,8 +40,7 @@ def read_excel(excel_file, sheet_name):
 	print ("Reading excel", excel_file, "...")
 
 	# Read excel file
-	xl = pd.ExcelFile(excel_file)
-	df = xl.parse(sheet_name)
+	df = pd.read_excel(excel_file, sheet_name, dtype=str)
 
 	return df
 
