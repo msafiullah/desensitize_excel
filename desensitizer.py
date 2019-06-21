@@ -118,7 +118,8 @@ def anonymize_df(df, selected_cols):
 	print ("Anonymize columns", selected_cols, "...")
 
 	for i, header_value in enumerate(selected_cols):
-		df[header_value] = df[header_value].apply(digest)
+		if header_value in df.columns:
+			df[header_value] = df[header_value].apply(digest)
 
 
 def mask_df(df, selected_cols):
@@ -127,7 +128,8 @@ def mask_df(df, selected_cols):
 	print ("Mask columns", selected_cols, "...")
 
 	for i, header_value in enumerate(selected_cols):
-		df[header_value] = df[header_value].apply(remap_char)
+		if header_value in df.columns:
+			df[header_value] = df[header_value].apply(remap_char)
 
 
 
