@@ -53,7 +53,17 @@ def write_csv(df, outfile_name):
 
 	# Write out a csv file.
 	df.to_csv(outfile, compression=None, index=False, sep="|")
-	
+
+
+def write_excel(df, outfile_name):
+	outfile = outfile_name + '.xlsx'
+
+	print ()
+	print ("Writing excel file", outfile, "...")
+
+	# Write out a csv file.
+	df.to_excel(outfile, index=False)
+
 
 def digest (x):
 	hash = md5()
@@ -158,6 +168,8 @@ if __name__ == "__main__":
 	# Write csv output
 	outfile = os.path.basename(excel_file) + '.' + sheet_name
 	write_csv(df, outfile)
+
+	write_excel(df, outfile)
 
 	# Write out character mapping used to csv file
 	df_char_map = pd.DataFrame(CHAR_MAP_DICT, index=[0])
