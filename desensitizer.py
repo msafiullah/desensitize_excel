@@ -70,7 +70,7 @@ def digest (x):
 	# Convert to unicode string
 	x = str(x)
 
-	if x.upper() == 'NULL' or x == '' or x is None:
+	if x.upper() == 'NULL' or x.upper() == 'NAN' or x == '' or x is None:
 		return "NULL"
 
 	hash.update(x.encode('utf-8'))
@@ -113,7 +113,7 @@ def remap_char (value):
 
 	value = str(value)
 
-	if value.upper() == 'NULL' or value == '' or value is None:
+	if value.upper() == 'NULL' or value.upper() == 'NAN' or value == '' or value is None:
 		return "NULL"
 
 	result = ""
