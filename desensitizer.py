@@ -15,8 +15,12 @@ if len(sys.argv) < 5 :
 
 excel_file = sys.argv[1]
 sheet_name = sys.argv[2]
-cols_to_hash = sys.argv[3].split(',')
-cols_to_mask = sys.argv[4].split(',')
+cols_to_hash = []
+if sys.argv[3] != '':
+	cols_to_hash = sys.argv[3].split(',')
+cols_to_mask = []
+if sys.argv[4] != '':
+	cols_to_mask = sys.argv[4].split(',')
 
 CHAR_MAP_DICT = None
 
