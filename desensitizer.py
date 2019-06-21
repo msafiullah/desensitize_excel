@@ -104,6 +104,9 @@ def remap_char (value):
 
 	value = str(value)
 
+	if value.upper() == 'NULL' or value == '' or value is None:
+		return "NULL"
+
 	result = ""
 	for i in range(0, len(value)):
 		c = value[i]
