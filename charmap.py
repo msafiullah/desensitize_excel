@@ -7,14 +7,6 @@ import pandas as pd
 
 script = sys.argv[0]
 
-if len(sys.argv) < 3 :
-	print ("Usage: ", script, " <generate|flip> <char_map.csv>")
-	sys.exit("Expecting 2 arguments.")
-
-
-arg_command = sys.argv[1]
-arg_file = sys.argv[2]
-
 
 def write_charmap(df, outfile):
 	print ()
@@ -81,6 +73,16 @@ def generate_charmap ():
 
 if __name__ == "__main__":
 
+	# Check arguments
+	if len(sys.argv) < 3 :
+		print ("Usage: ", script, " <generate|flip> <char_map.csv>")
+		sys.exit("Expecting 2 arguments.")
+
+	# Parse arguments
+	arg_command = sys.argv[1]
+	arg_file = sys.argv[2]
+
+
 	if arg_command == "generate":
 		df = generate_charmap()
 		write_charmap(df, arg_file)
@@ -92,7 +94,4 @@ if __name__ == "__main__":
 
 	else:
 		sys.exit("Invalid arg", arg_command)
-
-
-
 
