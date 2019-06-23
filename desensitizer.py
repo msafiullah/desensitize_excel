@@ -5,6 +5,7 @@ import os.path
 import pandas as pd
 from hashlib import md5
 from random import shuffle
+import charmap
 
 
 script = sys.argv[0]
@@ -79,36 +80,6 @@ def digest (x):
 	return m[0:5] + '-' + m[5:10] + '-' + m[-5:]
 
 
-def generate_char_map ():
-
-	print ()
-	print ("Generating character map dictionary ...")
-
-	A_str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	N_str = "0123456789"
-
-	def str_to_list(value):
-		l = []
-		for i in range(0, len(value)):
-			l.append(value[i])
-		return l
-
-	A_list = str_to_list(A_str)
-	a_list = [x.lower() for x in A_list]
-	N_list = str_to_list(N_str)
-
-	A_list_shuffled = A_list.copy()
-	N_list_shuffled = N_list.copy()
-
-	shuffle(A_list_shuffled)
-	a_list_shuffled = [x.lower() for x in A_list_shuffled]
-	shuffle(N_list_shuffled)
-
-	char_map_dict = dict(zip(A_list + a_list + N_list, A_list_shuffled + a_list_shuffled + N_list_shuffled))
-
-	return char_map_dict
-
-
 def remap_char (value):
 
 	value = str(value)
@@ -154,7 +125,7 @@ if __name__ == "__main__":
 	script_path = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 	if CHAR_MAP_DICT is None:
-		CHAR_MAP_DICT = generate_char_map()
+		CHAR_MAP_DICT = charmap.generate_charmap()
 
 	# Read excel sheet
 	df = read_excel(excel_file, sheet_name)
