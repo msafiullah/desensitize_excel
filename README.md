@@ -70,3 +70,14 @@ CSV File Name | Content
 -- | --
 excel.sheet.csv | Anonymized data in pipe delimited CSV format.
 excel.sheet.char_map.csv | Character map set used to mask alphanumeric characters.
+
+## Additional Features
+#### Generate your own character map
+```
+python3 charmap.py generate mycharmap.csv
+```
+
+#### Flip your character map
+```
+python3 charmap.py flip mycharmap.csv
+```
